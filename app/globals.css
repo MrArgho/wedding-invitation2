@@ -1,0 +1,86 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-serif: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-script: var(--font-great-vibes), cursive;
+  --font-bengali: var(--font-bengali), var(--font-cormorant), serif;
+
+  --color-maroon: var(--maroon);
+  --color-maroon-deep: var(--maroon-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-cream: var(--cream);
+
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+}
+
+:root {
+  color-scheme: dark;
+  --maroon: #651d2b;
+  --maroon-deep: #3d0f19;
+  --gold: #c9a45c;
+  --gold-soft: #e3c98f;
+  --cream: #f5e9d3;
+
+  --background: var(--maroon-deep);
+  --foreground: var(--cream);
+  --card: var(--maroon);
+  --card-foreground: var(--cream);
+  --popover: var(--maroon);
+  --popover-foreground: var(--cream);
+  --primary: var(--gold);
+  --primary-foreground: var(--maroon-deep);
+  --secondary: #7a2636;
+  --secondary-foreground: var(--cream);
+  --muted: #7a2636;
+  --muted-foreground: #d9c3a3;
+  --accent: var(--gold-soft);
+  --accent-foreground: var(--maroon-deep);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: color-mix(in oklab, var(--gold) 45%, transparent);
+  --input: color-mix(in oklab, var(--gold) 45%, transparent);
+  --ring: var(--gold-soft);
+  --radius: 0.625rem;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-serif;
+  }
+}
+
+.velvet-bg {
+  background-color: var(--maroon);
+  background-image:
+    radial-gradient(ellipse at 50% 38%, rgb(140 44 62 / 0.55), transparent 65%),
+    radial-gradient(ellipse at 50% 110%, rgb(30 6 12 / 0.6), transparent 60%);
+}
